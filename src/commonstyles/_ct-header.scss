@@ -1,0 +1,23 @@
+@import "mixins";
+
+ct-header {
+    @include display-flex(row);
+    align-items: baseline;
+    background-color: $header-bg-violet;
+    color: $main-text-white;
+    padding: .75rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+ct-nav {
+    a {
+        color: $main-text-white;
+        &:hover {
+            color: $header-hover-a-text;
+        }
+    }
+}
