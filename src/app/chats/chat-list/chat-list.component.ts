@@ -1,10 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 @Component({
-  selector: 'ct-list',
-  templateUrl: 'chat-list.component.html',
-  styleUrls: ['chat-list.component.css']
+  selector: 'ct-chat-list',
+  styleUrls: ['./chat-list.component.css'],
+  templateUrl: './chat-list.component.html'
 })
-export class ChatListComponent {
-  
+
+export class ChatListComponent implements OnInit {
+
+  selectedId: number;
+
+  constructor(private route: ActivatedRoute,
+              private router: Router) {
+
+  }
+
+  ngOnInit() {
+
+  }
+
+  select(chat) {
+    this.selectedId = chat.id;
+
+    // Navigate with relative link
+    this.router.navigate(['chat', chat.id])
+  }
+
 }

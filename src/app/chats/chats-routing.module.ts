@@ -1,14 +1,39 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatsComponent } from './chats.component';
+import { ChatDetailComponent } from './chat-detail';
+import { ChatHolderComponent } from './chat-holder';
+import { ChatNewComponent } from './chat-new';
 
-const routes: Routes = [
-  
+const chatRoutes: Routes = [
+  {
+    path: 'new',
+    component: ChatNewComponent
+  },
+  {
+    path: '',
+    component: ChatsComponent,
+    children: [
+      {
+        path: '',
+        component: ChatHolderComponent,
+      },
+      {
+        path: ':id',
+        component: ChatDetailComponent
+      }
+    ]
+  }
 ];
+
 @NgModule({
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(chatRoutes)
   ],
-  exports: [RouterModule],
+  exports: [
+    RouterModule
+  ],
   providers: []
 })
-export class ChatsRoutingModule {}
+
+export class ChatsRoutingModule { }

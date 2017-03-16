@@ -1,22 +1,23 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavComponent } from './nav/nav.component';
-import { HeaderComponent } from './header/header.component';
-// import { ChatsComponent } from '../chats/chats.component'
+import { NgModule } from '@angular/core';
+import { RouterModule }  from '@angular/router';
+import { NavComponent } from './nav';
+import { HeaderComponent } from './header'
 
-@NgModule ({
-    imports: [ CommonModule,
-     ],
-    declarations: [
-        NavComponent,
-        HeaderComponent,
-        // ChatsComponent
-        ],
-    exports: [NavComponent,
-        HeaderComponent,
-        // ChatsComponent
-        ],
-    providers: []
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
+  exports: [
+    HeaderComponent,
+    NavComponent
+  ],
+  declarations: [
+    HeaderComponent,
+    NavComponent
+  ],
+  providers: []
 })
 
-export class CoreModule{}
+export class CoreModule {}
