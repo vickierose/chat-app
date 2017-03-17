@@ -1,1 +1,8 @@
 <h3>MESSAGES LIST</h3>
+<ul>
+    <li *ngFor='let message of messages | async '>
+        {{message.text}}
+        <b>Sent at:</b>
+        <span>{{message.sentAt | date:'medium'}}</span>
+    </li>
+</ul>
