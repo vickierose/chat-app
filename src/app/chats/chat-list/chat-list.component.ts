@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { Chat } from '../shared/chat.model';
 
 @Component({
   selector: 'ct-chat-list',
@@ -9,8 +10,9 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 
 export class ChatListComponent implements OnInit {
 
-  selectedId: number;
 
+  selectedId: number;
+  @Input() chats: Promise<Chat[]>
   constructor(private route: ActivatedRoute,
               private router: Router) {
 
@@ -20,7 +22,7 @@ export class ChatListComponent implements OnInit {
 
   }
 
-  select(chat) {
+  select(chat:Chat) {
     this.selectedId = chat.id;
 
     // Navigate with relative link

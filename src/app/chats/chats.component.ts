@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from './shared/chat.service';
+import { Chat } from './shared/chat.model';
 
 @Component({
   selector: 'ct-chats',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ChatsComponent implements OnInit {
+  chats: Promise<Chat[]>;
 
-  constructor() {}
+  constructor(private chatService: ChatService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.chats = this.chatService.getAll();
+  }
 
 }

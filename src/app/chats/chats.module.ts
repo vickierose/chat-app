@@ -7,6 +7,7 @@ import { ChatNewComponent } from './chat-new';
 import { ChatHolderComponent } from './chat-holder';
 import { ChatsRoutingModule } from './chats-routing.module';
 import { MessagesSharedModule } from '../messages';
+import { ChatService } from './shared/chat.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { MessagesSharedModule } from '../messages';
     MessagesSharedModule,
     ChatsRoutingModule
   ],
-  providers: []
+  providers: [ChatService]
 })
 
 export class ChatsModule {}
