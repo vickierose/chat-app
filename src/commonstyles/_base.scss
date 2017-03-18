@@ -3,6 +3,7 @@
 html, body, footer, header, 
 div, section, article, aside, nav, 
 span, p, a,
+h1, h2, h3, h4, h5, h6,
 ol, ul, li, form, label, 
 table, caption, tbody, tfoot, thead, tr, th, td,
 input, button, textarea,
@@ -43,8 +44,18 @@ table {
 
 html {
   height:100%;
-  font-family: Arial, serif;
+  font-family: Roboto, Arial, serif;
   font-size: $font-base;
+  font-weight: 300;
+}
+
+h1, h2, h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 20%;
 }
 
 input{

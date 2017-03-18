@@ -5,7 +5,7 @@ import { Message } from '../message.model';
 
 @Component({
   selector: 'ct-message-list',
-  styleUrls: ['./message-list.component.css'],
+  styleUrls: ['./message-list.component.scss'],
   templateUrl: './message-list.component.html'
 })
 

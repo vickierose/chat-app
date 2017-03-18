@@ -6,6 +6,9 @@ ct-header {
     background-color: $header-bg-violet;
     color: $main-text-white;
     padding: .75rem;
+    @media screen and (max-width: 600px) {
+        display: block;
+    }
 }
 
 .logo {
@@ -14,8 +17,20 @@ ct-header {
 }
 
 ct-nav {
+    margin-left: calc(40% - 170px);
+    @media screen and (min-width: 601px) and (max-width:800px) {
+        margin-left: calc(50% - 170px);
+    }
     a {
         color: $main-text-white;
+        margin-right: 1rem;
+        &:last-child {
+            margin-right: 0; 
+        }
+        @media screen and (min-width: 601px) and (max-width:800px) {
+            margin-right: .5rem;
+        }
+
         &:hover {
             color: $header-hover-a-text;
         }

@@ -1,8 +1,23 @@
-<h3> Chat List </h3>
+<header>
+     <div class="arrow-icon">
+       <div class="arrow-image"></div>
+    </div>
+
+    <form class="search-field">
+        <input type="text" placeholder="Search">
+    </form>
+
+    <div class="sandwich-icon"></div>
+</header>
 
 <ul>
   <li *ngFor = 'let chat of chats | async' (click)="select({id:chat.id})">
-    {{chat.name}}
+    <div class="photo"></div>
+    <div class="chat-info">
+      <p class="chat-name">{{chat.name}}</p>
+      <p>last message</p>
+    </div>
+    <div class="timer">1m</div>
   </li>
 
 </ul>

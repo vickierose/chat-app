@@ -4,7 +4,7 @@ import { Chat } from './shared/chat.model';
 
 @Component({
   selector: 'ct-chats',
-  styleUrls: ['./chats.component.css'],
+  styleUrls: ['./chats.component.scss'],
   templateUrl: './chats.component.html'
 })
 
