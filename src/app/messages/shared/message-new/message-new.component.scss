@@ -1,9 +1,24 @@
+@import "../../../../commonstyles/mixins";
+@import "../../../../commonstyles/variables";
+
 .message-field-container {
-	textarea {
-		border-radius: 1.5rem;
-    	height: 2rem;
-    	margin: 1rem;
-    	padding: 1em 1rem;
-   		width: 70%;
+	@include display-flex(row);
+	button {
+		border-radius: 2rem;
+		height:  2rem;
+		line-height: 0;
+		margin: 1rem;
+		padding: 1em 1rem;
+		vertical-align: middle;
+		&:disabled {
+            background-color: $disabled-button-violet;
+		}
 	}
+
+	textarea {
+		@extend button;
+		border-radius: 1.5rem;
+		line-height: .75rem;
+   		width: 70%;
+	}	
 }

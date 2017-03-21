@@ -5,7 +5,7 @@ import { AuthService } from '../../core/auth.service'
 @Component({
   selector: 'ct-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.scss'],
 })
 
 export class LoginComponent implements OnInit {
@@ -19,7 +19,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(formData){
-      this.authService.login(formData)
+      this.authService.login(formData);
+      console.log(this.authService.isLoggedIn);
+      
+      console.log(formData.value);
+      console.log(formData.controls);
     }
     
   ngOnInit() {

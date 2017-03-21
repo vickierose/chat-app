@@ -1,32 +1,46 @@
+<h2>Register</h2>
 <form novalidate [formGroup]="user" (ngSubmit)="onSubmit(user)">
     <label>
-        <span>Full Name: </span>
-        <input type="text" formControlName="name">
-        <div *ngIf="user.get('name').hasError('required')">
+        <input type="text" 
+                formControlName="name" 
+                placeholder="Full Name">
+        <div class="error" *ngIf="user.get('name').hasError('required') && user.get('name').touched">
             Name is required
         </div>
     </label>
+
     <label>
-        <span>E-mail: </span>
-        <input type="email" formControlName="email">
-        <div *ngIf="user.get('email').hasError('required')">
+        <input type="email" 
+                formControlName="email" 
+                placeholder="E-mail">
+        <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">
             E-mail is required
         </div>
     </label>
+
     <div formGroupName="passwords">
         <label>
-            <span>Password: </span>
-            <input type="password" formControlName="password">
-            <div *ngIf="user.get('passwords').get('password').hasError('required')">
+            <input type="password" 
+                    formControlName="password" 
+                    placeholder="Password">
+            <div class="error" 
+                *ngIf="user.get('passwords').get('password').hasError('required') 
+                        && user.get('passwords').get('password').touched">
                 Password is required
             </div>
         </label>
+
         <label>
-            <span>Confirm Password: </span>
-            <input type="password" formControlName="confirmPassword">
-            <div *ngIf="user.get('passwords').get('confirmPassword').hasError('required')">Confirm Password is required</div>
+            <input type="password" 
+                    formControlName="confirmPassword" 
+                    placeholder="Confirm Password">
+            <div class="error"
+                 *ngIf="user.controls.passwords.get('confirmPassword').hasError('required')
+                        && user.controls.passwords.get('confirmPassword').touched">
+                Confirm Password is required
+            </div>
         </label>
     </div>
 
-    <button type="submit" [disabled]="user.invalid">Submit</button>
+    <button type="submit" [disabled]="user.invalid">Sign Up</button>
 </form>

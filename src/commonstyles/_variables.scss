@@ -1,31 +1,32 @@
 	// COLORS:
 
-$a-text-violet: #3b3e99;
-$active-tab-bg: #3b3e99;
 $aside-bg-violet: #3b3e99;
-$header-bg-violet:#3b3e99;
-$input-underline-violet: #3b3e99;
+		$a-text-violet: $aside-bg-violet;
+		$active-tab-bg: $aside-bg-violet;
+		$header-bg-violet:$aside-bg-violet;
+		$input-underline-violet: $aside-bg-violet;
 
 $main-text-black: #000;
 
-$active-timer-bg-white: #fff;
-$icons-white: #fff;
 $main-text-white: #fff;
-$messages-bg-white: #fff;
+		$active-timer-bg-white: $main-text-white;
+		$icons-white: $main-text-white;
+		$messages-bg-white: $main-text-white;
+
 
 $a-hover-text-color: #f1f1fb;
-$forms-tab-buttons-bg: #f1f1fb;
-$input-bg-violet: #f1f1fb;
-$my-message-bg: #f1f1fb;
+		$disabled-button-violet: $a-hover-text-color;
+		$input-bg-violet: $a-hover-text-color;
+		$my-message-bg: $a-hover-text-color;
 
 $buttons-bg-violet: #989ad7;
-$forms-border-violet: #989ad7;
-$menu-shadow-violet: #989ad7;
-$message-from-bg: #989ad7;
+		$message-from-bg: $buttons-bg-violet;
 
 $active-bg:#f23f79;
-$active-timer-text-pink: #f23f79;
-$header-hover-a-text: #f23f79;
+		$active-timer-text-pink: $active-bg;
+		$error-text-pink: $active-bg;
+		$header-hover-a-text: $active-bg;
+
 
 $hover-bg: #484cc4;
 $timer-bg: #3a3c8e;

@@ -1,0 +1,43 @@
+@import "mixins";
+@import "variables";
+
+ct-auth {
+    * {
+        display: block;
+    }
+
+    ct-register {
+        @include display-flex (column);
+        align-items: center;
+    }
+
+    ct-login {
+        @extend ct-register;
+        h2 {
+            margin-top: 4rem;
+        }
+    }
+    
+    label {
+		margin-top: 1rem;
+	}
+
+	input {
+		border-bottom: 1px solid $input-underline-violet;
+	}
+
+    .error {
+        color: $error-text-pink;
+        font-size: .7rem;
+        margin-top: .5em;
+        text-align: end;
+    }
+
+	button {
+		margin: 1rem auto;
+        padding: 0 1rem;
+        &:disabled {
+            background-color: $disabled-button-violet;
+        }
+	}
+}

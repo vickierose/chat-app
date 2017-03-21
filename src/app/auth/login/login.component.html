@@ -1,11 +1,25 @@
 <h2>LOGIN PAGE</h2>
-<form action="">
-    <label for="">
-        <span>E-mail: </span>
-        <input type="email">
+<form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <label>
+        <input type="text"
+                placeholder="Login" 
+                name="login" 
+                required
+                [ngModel]="user.login">
+        <div class="error" *ngIf="f.controls.login?.touched && f.controls.login?.invalid">
+            Login is required
+        </div>
     </label>
-    <label for="">
-        <span>Password: </span>
-        <input type="password">
+    <label>
+        <input type="password"
+                placeholder="Password" 
+                name="password" 
+                required
+                [ngModel]="user.password">
+         <div class="error" *ngIf="f.controls.password?.touched && f.controls.password?.invalid">
+            Password is required
+        </div>
     </label>
+
+    <button type="submit" [disabled]="f.invalid">Log In</button>
 </form>

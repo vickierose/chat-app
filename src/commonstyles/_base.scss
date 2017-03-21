@@ -53,9 +53,12 @@ h1, h2, h3 {
   font-size: 2rem;
   text-align: center;
 }
-
 h1 {
-  margin-top: 20%;
+margin-top: 20%;
+}
+
+h2 {
+  margin-top: 3rem;
 }
 
 input{
@@ -73,6 +76,7 @@ button {
   background-color: $buttons-bg-violet;
   color: $main-text-white;
   height: 1.5rem;
+  outline: none;
   &:hover {
     background-color: $hover-bg;
   }
