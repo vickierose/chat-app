@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   onSubmit(formData){
       this.authService.login(formData);
       console.log(this.authService.isLoggedIn);
-      
       console.log(formData.value);
       console.log(formData.controls);
     }
