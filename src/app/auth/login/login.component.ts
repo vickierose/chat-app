@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from './login.interface';
+import { AuthService } from '../../core/auth.service'
 
 @Component({
   selector: 'ct-login',
@@ -7,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LoginComponent implements OnInit {
+  user: User = {
+    login: '',
+    password: ''
+  }
 
-  constructor() {
+  constructor(private authService: AuthService) {
 
   }
 
+  onSubmit(formData){
+      this.authService.login(formData)
+    }
+    
   ngOnInit() {
 
   }
