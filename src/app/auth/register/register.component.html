@@ -16,6 +16,9 @@
         <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">
             E-mail is required
         </div>
+        <div class="error" *ngIf="user.get('email').hasError('pattern')">
+            Email format is invalid
+        </div>
     </label>
 
     <div formGroupName="passwords">

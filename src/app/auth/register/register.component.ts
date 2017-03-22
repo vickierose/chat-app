@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//import { MyValidator } from '../../shared/validators';
 
 @Component({
   selector: 'ct-register',
@@ -12,14 +13,15 @@ export class RegisterComponent implements OnInit {
   constructor(private fb: FormBuilder) {
 
   }
-
+  
   ngOnInit() {
+
     this.user = this.fb.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required]],
+      name: ['', Validators.compose([Validators.required])],
+      email: ['', [Validators.required, <any>Validators.pattern('^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$')]],
       passwords: this.fb.group ({
-        password: ['', Validators.required],
-        confirmPassword: ['', Validators.required]
+        password: ['', Validators.compose([Validators.required])],
+        confirmPassword: ['', Validators.compose([Validators.required])]
       })
     });
   }
