@@ -10,6 +10,7 @@ import { Message } from '../message.model';
 })
 
 export class MessageListComponent implements OnInit {
+  color = "#484cc4"; 
   chatId: number;
   messages: Promise<Message[]>
   constructor(private route: ActivatedRoute,

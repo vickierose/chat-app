@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Chat } from '../shared/chat.model';
 
@@ -9,8 +9,7 @@ import { Chat } from '../shared/chat.model';
 })
 
 export class ChatListComponent implements OnInit {
-
-
+  isClosed: boolean = false;
   selectedId: number;
   @Input() chats: Promise<Chat[]>
   constructor(private route: ActivatedRoute,
@@ -21,8 +20,13 @@ export class ChatListComponent implements OnInit {
   ngOnInit() {
 
   }
+  @Output () onToggled = new EventEmitter();
+  toggleClosedState(){
+    this.isClosed = !this.isClosed;
+    this.onToggled.emit(this.isClosed);
+  }
 
-  select(chat:Chat) {
+  select(chat: Chat) {
     this.selectedId = chat.id;
 
     // Navigate with relative link

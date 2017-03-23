@@ -11,7 +11,7 @@ export class MessageNewComponent implements OnInit {
   message: Message = {
     text: ''
   }
-
+  
   constructor() {}
 
   onSubmit (form){

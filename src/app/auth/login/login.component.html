@@ -1,4 +1,4 @@
-<h2>LOGIN PAGE</h2>
+<h2>Login</h2>
 <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
     <label>
         <input type="text"
@@ -22,4 +22,6 @@
     </label>
 
     <button type="submit" [disabled]="f.invalid">Log In</button>
+    <!--<button>Log in with Google</button>-->
+    <div class="g-signin2" data-onsuccess="onSignIn" id="gapi-login"></div>
 </form>

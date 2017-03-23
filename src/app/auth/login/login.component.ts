@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       console.log(this.authService.isLoggedIn);
       console.log(formData.value);
       console.log(formData.controls);
-    }
+  }
     
   ngOnInit() {
 
