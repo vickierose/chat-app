@@ -8,7 +8,9 @@ import { FilterTextComponent } from './filter-text.component';
         CommonModule,
         FormsModule,
         ReactiveFormsModule ],
-    declarations: [FilterTextComponent],
+    declarations: [
+        FilterTextComponent
+        ],
     exports: [
         CommonModule,
         FormsModule,
