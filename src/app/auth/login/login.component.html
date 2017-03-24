@@ -22,6 +22,7 @@
     </label>
 
     <button type="submit" [disabled]="f.invalid">Log In</button>
-    <!--<button>Log in with Google</button>-->
-    <div class="g-signin2" data-onsuccess="onSignIn" id="google-login"></div>
+    <button id="google-custom-button">Log in with Google</button>
 </form>
+
+<div *ngIf="profile">You logged in as {{username}}</div>

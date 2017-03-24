@@ -37,3 +37,8 @@ ct-message-list {
 
         right: 0;
     }
+
+	.message--chosen {
+		background-color: $chosen-message-bg;
+		color: $main-text-white;
+	}

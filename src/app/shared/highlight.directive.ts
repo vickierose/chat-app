@@ -6,14 +6,14 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export class HighlightDirective {
     constructor(private el: ElementRef){ }
 
-   @Input('highlighted') highlightColor: string; 
+   @Input('highlighted') activeClass: string; 
    
    @HostListener('click') private onClick(): void {
        debugger;
-        this.highlight(this.highlightColor);
+        this.highlight(this.activeClass);
    }
 
-   private highlight (color: string) {
-            this.el.nativeElement.style.backgroundColor = color;
+   private highlight (activeClass: string) {
+            this.el.nativeElement.classList.toggle(activeClass);
         };
 }
