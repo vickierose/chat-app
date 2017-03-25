@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Chat } from '../shared/chat.model';
 import { ChatService } from "../shared/chat.service";
@@ -11,8 +11,6 @@ import { BehaviorSubject, Subscription } from "rxjs/Rx";
 })
 
 export class ChatListComponent implements OnInit, OnDestroy {
-  
-  isClosed: boolean = false;
 
   private selectedId: number;
   private searchValue: string = "";
@@ -33,13 +31,6 @@ export class ChatListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     this.subscribtion.unsubscribe();
-  }
-
-
-  @Output () onToggled = new EventEmitter();
-  toggleClosedState(){
-    this.isClosed = !this.isClosed;
-    this.onToggled.emit(this.isClosed);
   }
 
   select(chat: Chat) {

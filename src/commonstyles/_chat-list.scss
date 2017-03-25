@@ -1,6 +1,6 @@
 @import "mixins";
 
-ct-chat-list {
+.chat-list-wrapper {
 	@include display-flex (column);
 	background-color: $aside-bg-violet;
 	color: $main-text-white;

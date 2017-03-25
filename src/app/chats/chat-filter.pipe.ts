@@ -5,12 +5,14 @@ import { Chat } from "./shared/chat.model";
     name: 'filterByName'
 })
 export class FilterByNamePipe implements PipeTransform{
-    public transform (chats: Chat[], filterValue: string): Chat[]{
-        return chats ?
-        chats.filter(chat => {
-            let pattern = new RegExp(filterValue.trim(), 'i')
-            return !!chat.name.match(pattern)
-        }) 
-            : chats;
+    public transform (chats: Chat[], filterValue: string){
+         if (chats) {
+            return chats.filter(chat => {
+                // let pattern = 
+                return chat.name.match(new RegExp(filterValue, 'gi'));
+            });
+        } else {
+            return chats;
+        }
     }
 }

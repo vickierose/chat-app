@@ -1,0 +1,13 @@
+     <div class="arrow-icon" (click)="toggleClosedState()">
+       <div class="arrow-image"></div>
+    </div>
+
+    <form class="search-field">
+        <input type="text" 
+        placeholder="Search"
+        name="search"
+        [(ngModel)]="searchValue"
+        (ngModelChange)="onSearchValueChange($event)">
+    </form>
+
+    <div class="sandwich-icon"></div>

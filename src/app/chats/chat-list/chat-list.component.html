@@ -1,17 +1,5 @@
-<header>
-     <div class="arrow-icon" (click)="toggleClosedState()">
-       <div class="arrow-image"></div>
-    </div>
-
-    <form class="search-field">
-        <input type="text" placeholder="Search">
-    </form>
-
-    <div class="sandwich-icon"></div>
-</header>
-
 <ul>
-  <li *ngFor = 'let chat of chats | async |filterByName: "Chat"' (click)="select({id:chat.id})">
+  <li *ngFor = 'let chat of chats | async |filterByName: searchValue' (click)="select({id:chat.id})">
     <div class="photo"></div>
     <div class="chat-info">
       <p class="chat-name">{{chat.name}}</p>
@@ -19,5 +7,4 @@
     </div>
     <div class="timer">1m</div>
   </li>
-
 </ul>
