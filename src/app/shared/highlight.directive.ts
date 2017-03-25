@@ -9,7 +9,6 @@ export class HighlightDirective {
    @Input('highlighted') activeClass: string; 
    
    @HostListener('click') private onClick(): void {
-       debugger;
         this.highlight(this.activeClass);
    }
 
