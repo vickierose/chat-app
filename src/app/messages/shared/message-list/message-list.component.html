@@ -2,9 +2,9 @@
 <ul>
     <li class="message" *ngFor='let message of messages | async '>
         <div class="photo"></div>
-        <div class="message-text">
+        <div [highlighted]="actClass" class="message-text">
             <span>{{message.text}}</span>
-            <div class="time">{{message.sentAt | date:'medium'}}</div>
+            <div class="time">{{message.sentAt | date:'shortTime'}}</div>
         </div>
     </li>
 </ul>

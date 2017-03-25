@@ -42,6 +42,9 @@
                         && user.controls.passwords.get('confirmPassword').touched">
                 Confirm Password is required
             </div>
+            <div class="error" *ngIf="!user.get('passwords').valid && user.get('passwords').get('confirmPassword').touched">
+                Passwords missmatch
+            </div>
         </label>
     </div>
 

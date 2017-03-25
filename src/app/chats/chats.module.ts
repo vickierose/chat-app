@@ -8,6 +8,7 @@ import { ChatHolderComponent } from './chat-holder';
 import { ChatsRoutingModule } from './chats-routing.module';
 import { MessagesSharedModule } from '../messages';
 import { ChatService } from './shared/chat.service';
+import { FilterByNamePipe } from "./chat-filter.pipe";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ChatService } from './shared/chat.service';
     ChatListComponent,
     ChatDetailComponent,
     ChatNewComponent,
-    ChatHolderComponent
+    ChatHolderComponent,
+    FilterByNamePipe
   ],
   imports: [
     SharedModule,

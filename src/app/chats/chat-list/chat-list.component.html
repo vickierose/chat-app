@@ -1,5 +1,5 @@
 <header>
-     <div class="arrow-icon">
+     <div class="arrow-icon" (click)="toggleClosedState()">
        <div class="arrow-image"></div>
     </div>
 
@@ -11,7 +11,7 @@
 </header>
 
 <ul>
-  <li *ngFor = 'let chat of chats | async' (click)="select({id:chat.id})">
+  <li *ngFor = 'let chat of chats | async |filterByName: "Chat"' (click)="select({id:chat.id})">
     <div class="photo"></div>
     <div class="chat-info">
       <p class="chat-name">{{chat.name}}</p>

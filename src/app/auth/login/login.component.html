@@ -1,4 +1,4 @@
-<h2>LOGIN PAGE</h2>
+<h2>Login</h2>
 <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
     <label>
         <input type="text"
@@ -22,4 +22,7 @@
     </label>
 
     <button type="submit" [disabled]="f.invalid">Log In</button>
+    <button id="google-custom-button">Log in with Google</button>
 </form>
+
+<div *ngIf="profile">You logged in as {{username}}</div>

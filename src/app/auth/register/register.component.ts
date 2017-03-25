@@ -22,8 +22,22 @@ export class RegisterComponent implements OnInit {
       passwords: this.fb.group ({
         password: ['', Validators.compose([Validators.required])],
         confirmPassword: ['', Validators.compose([Validators.required])]
+      }, {
+        validator: this.checkPasswordsMatch
       })
     });
+  }
+
+  checkPasswordsMatch (passwords: FormGroup){
+    let pass = passwords.get('password').value;
+    let confirmPass = passwords.get('confirmPassword').value;
+
+    if(pass===confirmPass){
+      return null
+    }
+    return{
+      valid: false
+    }
   }
 
   onSubmit (user){

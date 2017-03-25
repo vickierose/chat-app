@@ -17,4 +17,9 @@ export class ChatsComponent implements OnInit {
     this.chats = this.chatService.getAll();
   }
 
+  isChatListClosed: boolean;
+  onToggled(isClosed){
+    this.isChatListClosed = isClosed;
+  }
+
 }

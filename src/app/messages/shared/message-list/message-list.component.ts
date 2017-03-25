@@ -10,6 +10,7 @@ import { Message } from '../message.model';
 })
 
 export class MessageListComponent implements OnInit {
+  actClass = 'message--chosen'; 
   chatId: number;
   messages: Promise<Message[]>
   constructor(private route: ActivatedRoute,

@@ -1,4 +1,7 @@
 
-<ct-chat-list [chats]="chats"></ct-chat-list>
+<ct-chat-list [chats]="chats"
+                (onToggled)="onToggled($event)"
+                [ngClass]="{'ct-chat-list--closed': isChatListClosed }">
+ </ct-chat-list>
 
 <router-outlet></router-outlet>
