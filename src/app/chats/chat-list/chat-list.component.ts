@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Chat } from '../shared/chat.model';
 import { ChatService } from "../shared/chat.service";
-import { BehaviorSubject, Subscription } from "rxjs/Rx";
+import { BehaviorSubject, Subscription } from "rxjs";
 
 @Component({
   selector: 'ct-chat-list',

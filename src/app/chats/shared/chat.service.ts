@@ -5,6 +5,7 @@ import { BehaviorSubject} from 'rxjs';
 @Injectable()
 export class ChatService {
     private search$: BehaviorSubject<string> = new BehaviorSubject('');
+    
     getAll(){
         return Promise.resolve(CHATS);
     }

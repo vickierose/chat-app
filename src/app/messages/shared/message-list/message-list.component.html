@@ -1,6 +1,6 @@
 
 <ul>
-    <li class="message" *ngFor='let message of messages | async |filterMessagesByText: searchValue '>
+    <li class="message" *ngFor='let message of messages |filterMessagesByText: searchValue '>
         <div class="photo"></div>
         <div [highlighted]="actClass" class="message-text">
             <span>{{message.text}}</span>

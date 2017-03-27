@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { MESSAGES } from './mock-messages';
-import { BehaviorSubject } from "rxjs/Rx";
+import { BehaviorSubject, Observable } from "rxjs";
+import { Message } from "./message.model";
 
 
 export class MessageService {
     private search$: BehaviorSubject<string> = new BehaviorSubject('');
 
-    getAll(chatId){
+    getMessagesForChat(chatId): Observable<Message[]>{
         const messages = MESSAGES.filter(message => message.chatId ===chatId);
-        return Promise.resolve(messages);
+        return Observable.create(observer => observer.next(messages))
     }
 
     public setSearchValue(value: string): void{

@@ -10,12 +10,14 @@ import { Subscription } from "rxjs/Rx";
   templateUrl: './message-list.component.html'
 })
 
-export class MessageListComponent implements OnInit {
+export class MessageListComponent implements OnInit, OnDestroy {
   private searchValue: string = '';
-  private subscribtion: Subscription;
   actClass = 'message--chosen'; 
   chatId: number;
-  messages: Promise<Message[]>
+  messages: Message[];
+  subscriptions: Subscription[] = [];
+
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private messageService: MessageService) {}
@@ -23,16 +25,21 @@ export class MessageListComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe ((params: Params) => {
       this.chatId = +params['id'];
-      this.messages = this.messageService.getAll(this.chatId);
+      
+      this.subscriptions.push(this.messageService.getMessagesForChat(this.chatId).subscribe(
+        messages => this.messages = messages, err => console.log(err)
+        )
+      )
     });
     
-      this.subscribtion = this.messageService
+      this.subscriptions.push(this.messageService
                           .getSearchValue()
-                          .subscribe(value => this.searchValue = value) 
+                          .subscribe(value => this.searchValue = value)
+      )
   }
 
   ngOnDestroy(){
-    this.subscribtion.unsubscribe();
+    this.subscriptions.map(subscr => subscr.unsubscribe());
   }
 
 }
