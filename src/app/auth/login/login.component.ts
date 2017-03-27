@@ -2,6 +2,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { User } from './login.interface';
 import { AuthService } from '../../core/auth.service'
+import { Router } from "@angular/router";
 declare let gapi: any;
 
 @Component({
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(private authService: AuthService,
+              private router: Router,
               private zone: NgZone) {
 
   }
@@ -28,6 +30,7 @@ export class LoginComponent implements OnInit {
       console.log(this.authService.isLoggedIn);
       console.log(formData.value);
       console.log(formData.controls);
+      this.router.navigate(['chat'])
   }
     
   ngOnInit() {
