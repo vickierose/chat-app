@@ -14,9 +14,9 @@ export class ChatListComponent implements OnInit, OnDestroy {
 
   private selectedId: number;
   private searchValue: string = "";
-  private subscribtion: Subscription;
+  private subscriptions: Subscription[] = [];
 
-  @Input() chats: Promise<Chat[]>
+  @Input() chats: Chat[];
   constructor(private service: ChatService,
               private route: ActivatedRoute,
               private router: Router) {
@@ -24,13 +24,14 @@ export class ChatListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscribtion = this.service
+    this.subscriptions.push(this.service
                         .getSearchValue()
                         .subscribe(value => this.searchValue = value)
+    )
   }
 
   ngOnDestroy(){
-    this.subscribtion.unsubscribe();
+    this.subscriptions.map(subscr => subscr.unsubscribe());
   }
 
   select(chat: Chat) {

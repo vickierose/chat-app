@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { CHATS } from './mock-chats'
-import { BehaviorSubject} from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Chat } from "./chat.model";
 
 @Injectable()
 export class ChatService {
     private search$: BehaviorSubject<string> = new BehaviorSubject('');
     
-    getAll(){
-        return Promise.resolve(CHATS);
+    getChats(): Observable<Chat[]>{
+        return Observable.create(observer => observer.next(CHATS));
     }
 
     public setSearchValue(value: string): void {

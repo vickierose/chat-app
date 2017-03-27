@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor = 'let chat of chats | async |filterByName: searchValue' (click)="select({id:chat.id})">
+  <li *ngFor = 'let chat of chats |filterByName: searchValue' (click)="select({id:chat.id})">
     <div class="photo"></div>
     <div class="chat-info">
       <p class="chat-name">{{chat.name}}</p>
