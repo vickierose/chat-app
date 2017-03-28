@@ -10,4 +10,15 @@
         (ngModelChange)="onSearchValueChange($event)">
     </form>
 
-    <div class="sandwich-icon"></div>
+    <div class="sandwich-icon" (click)="toggleMenuState()"></div>
+
+    <!--Sandwich-button menu-->
+
+<nav class="menu" [ngClass]="{'aside__menu--showed': isMenuOpened}">
+    <ul>
+        <li><a routerLink="new" (click)="toggleMenuState()">New Chat</a></li>
+        <li><a href="#">smthng1</a></li>
+        <li><a href="#">smthng2</a></li>
+        <li><a href="#">smthng3</a></li>
+    </ul>
+</nav>

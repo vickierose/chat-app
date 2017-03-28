@@ -1,22 +1,22 @@
-import { Injectable } from '@angular/core';
+// import { Injectable } from '@angular/core';
 
-@Injectable()
-export class AuthService {
-    get isLoggedIn (){
-        return localStorage.getItem('token') == '' ? false : true;
-    }
+// @Injectable()
+// export class AuthService {
+//     get isLoggedIn (){
+//         return localStorage.getItem('token') == '' ? false : true;
+//     }
 
-    login (user){
-        if(user){
-            localStorage.setItem('token', 'youlogged')
-        }
-    }
+//     login (user){
+//         if(user){
+//             localStorage.setItem('token', 'youlogged')
+//         }
+//     }
 
-    register(user){
+//     register(user){
 
-    }
+//     }
 
-    logout (){
-        localStorage.setItem('token', '');
-    }
-}
+//     logout (){
+//         localStorage.setItem('token', '');
+//     }
+// }

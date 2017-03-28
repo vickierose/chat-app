@@ -1,5 +1,5 @@
 <h2>Login</h2>
-<form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+<form novalidate #f="ngForm" (ngSubmit)="onSubmit(f.value)">
     <label>
         <input type="text"
                 placeholder="Login" 
@@ -25,4 +25,3 @@
     <button id="google-custom-button">Log in with Google</button>
 </form>
 
-<div *ngIf="profile">You logged in as {{username}}</div>

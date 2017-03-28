@@ -15,8 +15,9 @@ ct-chats {
 	textarea {
 		@extend input;
 	}
+}
 
-	.photo {
+.photo {
 		background: deeppink;
 		background-position: -12px 0;
 		background-repeat: no-repeat;
@@ -24,4 +25,3 @@ ct-chats {
 		height: 45px;
 		min-width: 45px;
 	}
-}

@@ -5,6 +5,7 @@ $aside-bg-violet: #3b3e99;
 		$active-tab-bg: $aside-bg-violet;
 		$header-bg-violet:$aside-bg-violet;
 		$input-underline-violet: $aside-bg-violet;
+		$checked-user-btn-violet: $aside-bg-violet;
 
 $main-text-black: #000;
 
@@ -12,6 +13,7 @@ $main-text-white: #fff;
 		$active-timer-bg-white: $main-text-white;
 		$icons-white: $main-text-white;
 		$messages-bg-white: $main-text-white;
+		$check-btn-border: $main-text-white;
 
 
 $a-hover-text-color: #f1f1fb;
@@ -21,6 +23,9 @@ $a-hover-text-color: #f1f1fb;
 
 $buttons-bg-violet: #989ad7;
 		$message-from-bg: $buttons-bg-violet;
+		$menu-shadow-violet: $buttons-bg-violet;
+		$menu-border-violet: $buttons-bg-violet;
+		$userlist-bg-violet: $buttons-bg-violet;
 
 $active-bg:#f23f79;
 		$active-timer-text-pink: $active-bg;

@@ -1,6 +1,16 @@
 <nav>
   <a routerLink="/" routerLinkActive="active">Home</a>
   <a routerLink="/chat" routerLinkActive="active">Chat</a>
-  <a routerLink="/auth/login" routerLinkActive="active">Login</a>
-  <a routerLink="/auth/register" routerLinkActive="active">Register</a>
+  <ng-container *ngIf="!isLoggedIn">
+      <a routerLink="/auth/login" routerLinkActive="active">Login</a>
+     <a routerLink="/auth/register" routerLinkActive="active">Register</a>
+  </ng-container>
 </nav>
+
+<div *ngIf="isLoggedIn" class="user-info">
+  <a class="profile-link">
+    <div class="photo"></div>
+    <span>{{username}}</span>
+  </a>
+  <a (click)="logOut()">Log Out</a>
+  </div>

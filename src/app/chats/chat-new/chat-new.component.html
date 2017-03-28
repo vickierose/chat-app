@@ -1,1 +1,39 @@
-<h3>Chat New Form</h3>
+<h3>Create new chat</h3>
+
+<form
+    class="new-chat-form"
+    novalidate
+    #form="ngForm"
+    (ngSubmit)="onSubmit(form.value); form.reset()">
+    <input
+        type="text"
+        autocomplete="off"
+        name="chatName"
+        placeholder="Enter chat name"
+        ngModel
+        required>
+
+    <button type="button"
+            (click)="openUserList()">
+            Invite users
+    </button>
+
+    <ul class="userlist"
+     [ngClass]="{'userlist--visible': isUserListVisible}">
+        <li class="new-chat-user"
+            *ngFor="let user of users; let i = index">
+            <div class="photo"></div>
+            <span class="new-chat-user__info">{{user.name}} {{user.surname}} </span>
+            <button type="button" class="user-selection-btn"
+                     #checkBtn (click)="addUser(checkBtn, i)">
+                     &#10003;
+            </button>
+        </li>
+    </ul>
+
+    <button
+        type="submit"
+        [disabled]="form.invalid || !isUserChecked">
+        Create new chat
+    </button>
+</form>

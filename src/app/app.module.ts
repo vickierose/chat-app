@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from "@angular/http";
+
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { AuthGuard } from "./auth/auth.guard.service";
+import { UserService } from "./auth/users/user.service";
+
 
 @NgModule({
   declarations: [
@@ -17,8 +21,12 @@ import { AuthGuard } from "./auth/auth.guard.service";
     BrowserModule,
     CoreModule,
     AppRoutingModule,
+    HttpModule
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard, 
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 

@@ -18,3 +18,7 @@ ct-chat-detail {
 	@extend ct-chat-holder;
 	@include display-flex (column);	
 }
+
+ct-chat-new {
+	@extend ct-chat-holder;
+}

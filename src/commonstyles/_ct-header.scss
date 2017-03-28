@@ -17,6 +17,9 @@ ct-header {
 }
 
 ct-nav {
+    @include display-flex(row);
+    flex-grow: 1;
+    justify-content: space-between;
     margin-left: calc(40% - 170px);
     @media screen and (min-width: 601px) and (max-width:800px) {
         margin-left: calc(50% - 170px);
@@ -34,5 +37,18 @@ ct-nav {
         &:hover {
             color: $header-hover-a-text;
         }
+    }
+}
+
+.user-info {
+    @include display-flex(row);
+    .profile-link {
+        @include display-flex(row);
+    }
+    .photo {
+        height: 40px;
+        margin-right: 1rem;
+        margin-top: -.4rem;
+        min-width: 40px;
     }
 }
