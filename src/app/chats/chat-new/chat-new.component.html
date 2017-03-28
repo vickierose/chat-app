@@ -17,19 +17,26 @@
             (click)="openUserList()">
             Invite users
     </button>
+    <ng-container *ngIf="isUserListVisible">
 
-    <ul class="userlist"
-     [ngClass]="{'userlist--visible': isUserListVisible}">
-        <li class="new-chat-user"
-            *ngFor="let user of users; let i = index">
-            <div class="photo"></div>
-            <span class="new-chat-user__info">{{user.name}} {{user.surname}} </span>
-            <button type="button" class="user-selection-btn"
-                     #checkBtn (click)="addUser(checkBtn, i)">
-                     &#10003;
-            </button>
-        </li>
-    </ul>
+        <input type="text" name="search"
+                placeholder="Search user"
+                ([ngModel])="this.searchValue"
+                 (ngModelChange)="onSearchValueChange($event)">
+
+        <ul class="userlist"
+        [ngClass]="{'userlist--visible': isUserListVisible}">
+            <li class="new-chat-user"
+                *ngFor="let user of users | filterUsers: searchValue; let i = index">
+                <div class="photo"></div>
+                <span class="new-chat-user__info">{{user.name}} {{user.surname}} </span>
+                <button type="button" class="user-selection-btn"
+                        #checkBtn (click)="addUser(checkBtn, i)">
+                        &#10003;
+                </button>
+            </li>
+        </ul>
+    </ng-container>
 
     <button
         type="submit"
