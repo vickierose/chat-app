@@ -9,6 +9,7 @@ import { HomeComponent } from './home.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { AuthGuard } from "./auth/auth.guard.service";
 import { UserService } from "./auth/users/user.service";
+import { ChatNewService } from "./chats/chat-new/chat-new.service";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { UserService } from "./auth/users/user.service";
   ],
   providers: [
     AuthGuard, 
-    UserService
+    UserService,
+    ChatNewService
   ],
   bootstrap: [AppComponent]
 })

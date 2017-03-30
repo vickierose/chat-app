@@ -9,8 +9,7 @@ export class FilterUsersPipe implements PipeTransform {
         return users ? 
         users.filter(user => {
         let pattern = new RegExp(filterValue.trim(), 'i')
-        return !!user.name.match(pattern) ||
-                !!user.surname.match(pattern)
+        return !!user.username.match(pattern)
     })
     : users;
     }

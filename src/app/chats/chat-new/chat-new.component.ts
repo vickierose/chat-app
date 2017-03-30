@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { USERS } from "../../auth/users/mock-users";
+//import { USERS } from "../../auth/users/mock-users";
 import { Chat } from "../shared/chat.model";
 import { UserService } from "../../auth/users/user.service";
 import { ChatNewService } from "./chat-new.service";
 import { Subscription } from "rxjs";
+import { User } from "../../auth/users/user.model";
 
 @Component({
   selector: 'ct-chat-new',
@@ -13,12 +14,16 @@ import { Subscription } from "rxjs";
 })
 
 export class ChatNewComponent implements OnInit, OnDestroy {
-  private users: any[] = USERS;
+
+  private users: User[];
   private searchValue: string = '';
+
   private subscriptions: Subscription[] = [];
+
   userId: number = 1;
   isUserListVisible: boolean = false;
   isUserChecked: boolean = false;
+
   newChat: Chat = {
     id: this.userId,
     name: '',
@@ -35,7 +40,14 @@ export class ChatNewComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscriptions.push(
       this.chatNewService.getSearchValue().subscribe(value => this.searchValue = value)
-    )
+    );
+
+    this.subscriptions.push(
+      this.chatNewService.getUsers().subscribe(
+        this.onGettingUsersSuccess,
+        this.onGettingUsersError
+      )
+    );
   }
 
   ngOnDestroy(): void {
@@ -65,6 +77,15 @@ export class ChatNewComponent implements OnInit, OnDestroy {
 
   private onSearchValueChange(value: string): void {
     this.chatNewService.setSeachValue(value);
+  }
+
+  private onGettingUsersSuccess(data){
+    this.users = data;
+    console.log(this.users);
+  }
+
+  private onGettingUsersError(err: any) {
+    console.log(err);
   }
 
 }
