@@ -17,13 +17,14 @@
             (click)="openUserList()">
             Invite users
     </button>
+
     <ng-container *ngIf="isUserListVisible">
 
         <input type="text" name="search"
                 placeholder="Search user"
-                ([ngModel])="this.searchValue"
+                [(ngModel)]="searchValue"
                  (ngModelChange)="onSearchValueChange($event)">
-
+                 <div>{{searchValue}}</div>
         <ul class="userlist"
         [ngClass]="{'userlist--visible': isUserListVisible}">
             <li class="new-chat-user"
